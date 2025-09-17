@@ -244,38 +244,56 @@ elif st.session_state["step"] == 3:
 
     st.session_state["now_word_number"] = 1
 
-    if the_file.type == "word":
-        # 3등분된 열 생성
-        col1, col2, col3 = st.columns(3)
+    # if the_file.type == "word":
+    #     # 3등분된 열 생성
+    #     col1, col2, col3 = st.columns(3)
 
-        # 각 열에 버튼 배치
-        with col1:
-            if st.button("기본", use_container_width=True):
-                st.session_state["step"] = 4
-                st.session_state["word_type"] = 0
-                st.rerun()
-        with col2:
-            if st.button("단어만", use_container_width=True):
-                st.session_state["step"] = 4
-                st.session_state["word_type"] = 1
-                st.rerun()
-        with col3:
-            if st.button("랜덤", use_container_width=True):
-                st.session_state["step"] = 4
-                st.session_state["word_type"] = 3
-                st.rerun()
+    #     # 각 열에 버튼 배치
+    #     with col1:
+    #         if st.button("기본", use_container_width=True):
+    #             st.session_state["step"] = 4
+    #             st.session_state["word_type"] = 0
+    #             st.rerun()
+    #     with col2:
+    #         if st.button("단어만", use_container_width=True):
+    #             st.session_state["step"] = 4
+    #             st.session_state["word_type"] = 1
+    #             st.rerun()
+    #     with col3:
+    #         if st.button("랜덤", use_container_width=True):
+    #             st.session_state["step"] = 4
+    #             st.session_state["word_type"] = 3
+    #             st.rerun()
 
 
 
 
        
-    else:
-        st.session_state["word_type"] = 0
-        st.session_state["step"] = 4
-        st.rerun()
-
+    # else:
+    #     st.session_state["word_type"] = 0
+    #     st.session_state["step"] = 4
+    #     st.rerun()
+    st.session_state["word_type"] = 0
+    st.session_state["step"] = 4
+    st.rerun()
 
 elif st.session_state["step"] == 4:
+    st.markdown(
+    """
+    <style>
+    button {
+        animation: fadeIn 0.5s ease-in-out forwards;
+        opacity: 0;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+    )
     the_file = st.session_state["the_file"]
     dic_num = st.session_state["dic_num"]
 
@@ -372,6 +390,22 @@ elif st.session_state["step"] == 4:
 
         
 elif st.session_state["step"] == 5:
+    st.markdown(
+    """
+    <style>
+    button {
+        animation: fadeIn 0.5s ease-in-out forwards;
+        opacity: 0;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+    )
     the_file = st.session_state["the_file"]
 
     dic_num = st.session_state["dic_num"]
